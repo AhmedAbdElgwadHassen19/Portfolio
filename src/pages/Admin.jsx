@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom'
 
 const Admin = () => {
   const { isAuthenticated, login } = useAdmin()
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loginError, setLoginError] = useState('')
   const [projects, setProjects] = useState([])
@@ -34,21 +35,31 @@ const Admin = () => {
     e.preventDefault()
     try {
       setLoginError('')
-      const response = await adminAPI.login(password)
-      if (response.data.success) {
-        login(response.data.token)
+      // Only allow the configured admin email
+      const allowedAdmin = import.meta.env.VITE_ADMIN_EMAIL
+      if (email !== allowedAdmin) {
+        setLoginError('هذا الحساب ليس حساب المدير')
+        return
+      }
+
+      const response = await adminAPI.login({ email, password })
+      if (response?.data?.uid) {
+        // store a simple token in localStorage to keep compatibility with AdminContext
+        login('admin-token')
+        setEmail('')
         setPassword('')
       }
     } catch (error) {
-      setLoginError('Invalid password')
+      console.error('Login error', error)
+      setLoginError('فشل تسجيل الدخول')
     }
   }
 
   const fetchProjects = async () => {
     try {
       setLoading(true)
-      const response = await projectsAPI.getAll()
-      setProjects(response.data)
+  const response = await projectsAPI.getAll()
+  setProjects(response.data || [])
     } catch (error) {
       console.error('Error fetching projects:', error)
     } finally {
@@ -73,7 +84,7 @@ const Admin = () => {
       } else {
         await projectsAPI.create(formData)
       }
-      
+
       await fetchProjects()
       resetForm()
     } catch (error) {
@@ -98,7 +109,7 @@ const Admin = () => {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this project?')) {
       try {
-        await projectsAPI.delete(id)
+  await projectsAPI.delete(id)
         await fetchProjects()
       } catch (error) {
         console.error('Error deleting project:', error)
@@ -143,6 +154,21 @@ const Admin = () => {
             </h1>
             
             <form onSubmit={handleLogin} className="space-y-6">
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  البريد الإلكتروني
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="input-field"
+                  placeholder="admin@example.com"
+                />
+              </div>
+
               <div>
                 <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   كلمة المرور

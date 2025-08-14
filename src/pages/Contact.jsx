@@ -32,13 +32,13 @@ const Contact = () => {
     {
       icon: FaEnvelope,
       label: 'Email',
-      value: 'ahmed.a.h.gaber@gmail.com',
-      link: 'mailto:ahmed.a.h.gaber@gmail.com'
+      value: 'ahmed.a.hassan.gaber@gmail.com',
+      link: 'mailto:ahmed.a.hassan.gaber@gmail.com'
     },
     {
       icon: FaPhone,
       label: 'Phone',
-      value: '+01201302871',
+      value: '+201201302871',
       link: 'tel:+01201302871'
     },
     {
@@ -65,7 +65,7 @@ const Contact = () => {
     {
       icon: FaGithub,
       label: 'GitHub',
-      link: 'https://github.com/AhmedAbdElgwadHassan19',
+      link: 'https://github.com/AhmedAbdElgwadHassen19',
       color: 'text-gray-800 dark:text-gray-200 hover:text-gray-700 dark:hover:text-gray-300'
     }
   ]

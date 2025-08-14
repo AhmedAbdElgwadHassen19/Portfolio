@@ -24,8 +24,8 @@ const Projects = () => {
   const fetchProjects = async () => {
     try {
       setLoading(true)
-      const response = await projectsAPI.getAll()
-      setProjects(response.data)
+  const response = await projectsAPI.getAll()
+  setProjects(response.data || [])
       setError(null)
     } catch (err) {
       setError('Failed to fetch projects')

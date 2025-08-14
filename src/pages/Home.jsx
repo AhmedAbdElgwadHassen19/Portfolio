@@ -49,7 +49,7 @@ const Home = () => {
 
   const skills = [
     'React.js', 'JavaScript', 'TypeScript', 'HTML5', 'CSS3', 'Tailwind CSS',
-    'Bootstrap', 'Firebase', 'MongoDB', 'Node.js', 'Git', 'GitHub'
+    'Bootstrap', 'Firebase', 'ShadCN UI', 'Next.js', 'Git', 'GitHub'
   ]
 
   const testimonials = [
@@ -89,7 +89,7 @@ const Home = () => {
     {
       name: 'WhatsApp',
       icon: FaWhatsapp,
-      url: 'https://wa.me/1234567890',
+      url: 'https://wa.me/01201302871',
       color: 'bg-green-600 hover:bg-green-700'
     },
     {
@@ -192,9 +192,9 @@ const Home = () => {
               About Me
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-12">
-              Frontend Developer with 1+ years of experience specializing in React.js, Firebase, 
-              and modern web technologies. I'm passionate about building responsive, user-friendly 
-              applications including dashboards and AI-powered tools.
+              Frontend Developer specializing in React.js, Next.js, and Firebase, with hands-on experience building scalable, 
+              responsive web applications. Skilled in developing interactive dashboards,
+              AI-integrated tools, and map-based systems, with a focus on clean code and seamless user experiences
             </p>
           </motion.div>
 
@@ -236,7 +236,7 @@ const Home = () => {
                   🎯 Experience
                 </h4>
                 <p className="text-gray-600 dark:text-gray-400">
-                  1+ years building modern web applications
+                  2 years building modern web applications
                 </p>
               </div>
               <div className="card">

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { FaGithub, FaLinkedin, FaWhatsapp, FaFacebook, FaHeart } from 'react-icons/fa'
@@ -8,7 +8,7 @@ const Footer = () => {
     {
       name: 'GitHub',
       icon: FaGithub,
-      url: 'https://github.com/AhmedAbdElgwadHassan19',
+      url: 'https://github.com/AhmedAbdElgwadHassen19',
       color: 'hover:text-gray-800 dark:hover:text-gray-200'
     },
     {
@@ -44,7 +44,7 @@ const Footer = () => {
           {/* About Section */}
           <div>
             <h3 className="text-2xl font-bold bg-gradient-to-r from-primary-400 to-purple-400 bg-clip-text text-transparent mb-4">
-              Ahmed Hassan
+              Ahmed AbdELgwad Hassan
             </h3>
             <p className="text-gray-400 mb-4">
               Frontend Developer passionate about creating beautiful, responsive web applications 
@@ -87,8 +87,8 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Get In Touch</h4>
             <div className="space-y-2 text-gray-400">
-              <p>📧 ahmed.a.h.gaber@gmail.com</p>
-              <p>📱 20+1201302871</p>
+              <p>📧 ahmed.a.hassan.gaber@gmail.com</p>
+              <p>📱 +201201302871</p>
               <p>📍 Alexandria, Egypt</p>
             </div>
           </div>
